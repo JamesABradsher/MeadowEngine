@@ -97,6 +97,7 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
+*.sln
 
 # Chutzpah Test files
 _Chutzpah*
@@ -361,3 +362,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# I didn't want to read all of that, but it's still adding some Visual Studio projectfiles I dont want, so here we go
+/**.vcxproj
+/**.vcproj.filters
