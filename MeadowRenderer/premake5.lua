@@ -17,7 +17,8 @@ project "MeadowRenderer"
 	}
 
 	filter { "configurations:Debug" }
-		buildoptions "/MTd"
+        filter "windows"
+		    buildoptions "/MTd"
 		runtime "Debug"
 		symbols "on"
 		defines {
@@ -25,6 +26,7 @@ project "MeadowRenderer"
 		}
 
 	filter { "configurations:Release"}
-		buildoptions "/MT"
+        filter "windows"
+		    buildoptions "/MT"
 		runtime "Release"
 		optimize "on"

@@ -1,10 +1,15 @@
 workspace "Meadow"
-	architecture"x64"
-
+	
 	configurations {
 		"Debug",
 		"Release"
 	}
+
+	filter "windows"
+		architecture"x64"
+	
+	filter "macosx"
+		architecture"ARM64"
 
 	startproject "MeadowRenderer"
 
