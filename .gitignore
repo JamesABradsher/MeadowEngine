@@ -365,4 +365,5 @@ FodyWeavers.xsd
 
 # I didn't want to read all of that, but it's still adding some Visual Studio projectfiles I dont want, so here we go
 *.vcxproj*
-
+/bin/*
+/bin-int/*

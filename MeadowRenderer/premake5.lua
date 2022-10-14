@@ -1,5 +1,5 @@
-project "MeadowEngine"
-	kind "StaticLib"
+project "MeadowRenderer"
+	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++20"
 	staticruntime "on"
