@@ -5,10 +5,10 @@ workspace "Meadow"
 		"Release"
 	}
 
-	filter "windows"
+	filter "system:windows"
 		architecture"x64"
 	
-	filter "macosx"
+	filter "system:macosx"
 		architecture"ARM64"
 
 	startproject "MeadowRenderer"

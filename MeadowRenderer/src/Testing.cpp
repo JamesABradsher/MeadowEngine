@@ -1,6 +1,10 @@
 #include "Testing.h"
 
+#include <iostream>
+
 int Testing::Run()
 {
-	return 0;
+	int ret_val = 0;
+
+	return ret_val;
 }

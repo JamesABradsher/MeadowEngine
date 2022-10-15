@@ -13,20 +13,22 @@ project "MeadowRenderer"
 	}
 
 	includedirs {
-		"include"
+		"include",
+		"%{wks.location}/MeadowEngine/include"
+	}
+
+	links {
+		"MeadowEngine"
 	}
 
 	filter { "configurations:Debug" }
-        filter "windows"
+        filter "system:windows"
 		    buildoptions "/MTd"
 		runtime "Debug"
 		symbols "on"
-		defines {
-			"DEBUG"
-		}
 
 	filter { "configurations:Release"}
-        filter "windows"
+        filter "system:windows"
 		    buildoptions "/MT"
 		runtime "Release"
 		optimize "on"

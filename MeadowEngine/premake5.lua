@@ -20,9 +20,6 @@ project "MeadowEngine"
 		buildoptions "/MTd"
 		runtime "Debug"
 		symbols "on"
-		defines {
-			"DEBUG"
-		}
 
 	filter { "configurations:Release"}
 		buildoptions "/MT"

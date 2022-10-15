@@ -1,10 +1,10 @@
-#include "Testing.h"
 
 #include <iostream>
 
-int main(int argc, char** argv)
+#include "Testing.h"
+
+int main()
 {
-	std::cout << "Hello" << std::endl;
 	Testing app;
 	return 	app.Run();
 }
