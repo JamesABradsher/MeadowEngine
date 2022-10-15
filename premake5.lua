@@ -28,8 +28,13 @@ newaction {
 		print("Removing intermediates")
 		os.rmdir("./bin-int/")
 		print("Removing project files")
-		os.rmdir("./.vs")
-		os.remove("**.sln")
-		os.remove("**.vcxproj*")
+		filter "system:windows"
+			os.rmdir("./.vs")
+			os.remove("**.sln")
+			os.remove("**.vcxproj*")
+		filter "system:macosx"
+			os.execute("rm -r -f ./**/*.xc*/")
+			os.execute("rm -r -f ./*.xc*/")
+
 	end
 }
