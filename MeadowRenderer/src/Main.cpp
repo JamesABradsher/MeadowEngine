@@ -6,5 +6,5 @@
 int main()
 {
 	Testing app;
-	return 	app.Run();
+	app.Run();
 }

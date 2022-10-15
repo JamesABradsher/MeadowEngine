@@ -14,9 +14,9 @@ class Object {
     
 // Constructor
 public:
-    Object(Vector pos, Vector acc, Vector vel, float mass)
+    Object(Vector pos, Vector vel, Vector acc, float mass)
     {
-        init(pos, acc, vel, mass);
+        init(pos, vel, acc, mass);
     }
     
     Object(Vector &pos)
@@ -35,8 +35,7 @@ public:
     }
     
 // Methods
-public:
-    
+public: 
     
     // Getters and Setters
     
@@ -52,9 +51,10 @@ public:
     void SetVelocity(float xvel, float yvel);
     void SetAcceleration(Vector acc);
     void SetAcceleration(float xacc, float yacc);
+    void SetGravity(bool gravity);
     
 private:
-    void init(Vector pos, Vector acc, Vector vel, float mass)
+    void init(Vector pos, Vector vel, Vector acc, float mass)
     {
         m_Position = pos;
         m_Acceleration = acc;
@@ -66,7 +66,8 @@ private:
 private:
     Vector m_Position, m_Acceleration, m_Velocity;
     float m_Mass;
-    
+    float m_Gravity = -9.81f;
+    bool m_HasGravity = false;
 };
 
 #endif /* Object_h */ // Apearently xcode and vs have different comment formats

@@ -20,17 +20,19 @@ void World::step(float DeltaTime)
 {
     for (Object* object : m_DynamicObjects)
     {
+        // Updates Position
+        Vector newPos = object->GetPosition();
+        newPos + object->GetVelocity();
+        newPos * DeltaTime;
+        object->SetPosition(newPos);
+        
         // Updates Velocity
         Vector newVel = object->GetVelocity();
         newVel + object->GetAcceleration();
         newVel * DeltaTime;
         object->SetVelocity(newVel);
 
-        // Updates Position
-        Vector newPos = object->GetPosition();
-        newPos + object->GetVelocity();
-        newPos * DeltaTime;
-        object->SetPosition(newPos);
-
+        std::cout << "Position: " << object->GetPosition().GetX() << ", " << object->GetPosition().GetY() << std::endl;
+        std::cout << "Velocity: " << object->GetVelocity().GetX() << ", " << object->GetVelocity().GetY() << std::endl;
     }
 }

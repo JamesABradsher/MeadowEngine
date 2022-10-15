@@ -9,7 +9,7 @@ class Testing {
 
 // Methods
 public:
-	int Run();
+	void Run();
 
 };
 

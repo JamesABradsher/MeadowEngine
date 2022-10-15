@@ -14,7 +14,7 @@ project "MeadowEngine"
 
 	includedirs {
 		"include",
-		"%{prj.location}/vendor/**"
+		"%{prj.location}/vendor/spdlog/include/"
 	}
 
 	filter { "configurations:Debug" }

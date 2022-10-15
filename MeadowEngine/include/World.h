@@ -5,11 +5,8 @@
 
 #include "Vector.h" // This wont get confusing at all
 #include "Object.h"
-#include "easylogging++.h"
 
 #ifdef WORLD_DEBUG
-
-#define 
 #else
 #endif // !WORLD_DEBUG
 

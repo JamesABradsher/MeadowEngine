@@ -64,3 +64,12 @@ void Object::SetAcceleration(float xacc, float yacc)
     m_Acceleration.SetX(xacc);
     m_Acceleration.SetY(yacc);
 }
+
+void Object::SetGravity(bool gravity)
+{
+    m_HasGravity = gravity;
+    if (m_HasGravity)
+        m_Acceleration.SetY(m_Gravity);
+    else
+        m_Acceleration.SetY(0);
+}

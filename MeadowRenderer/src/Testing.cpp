@@ -2,15 +2,15 @@
 
 #include <iostream>
 
-int Testing::Run()
+void Testing::Run()
 {
-	int ret_val = 0;
 
+	Object tst = Object(0, 1000);
+	tst.SetGravity(true);
     World world;
+	world.AddObject(&tst);
 	for (int i = 0; i < 100; i++)
 	{
 		world.step(1);
 	}
-	
-	return ret_val;
 }
