@@ -1,8 +1,15 @@
+//
+//  Vector.h
+//  MeadowEngine
+//
+//  Created by Jim Bradsher on 10/15/22.
+//
+
 #pragma once
 
 
-#ifndef VECTOR_2_H
-#define VECTOR_2_H
+#ifndef VECTOR_2D_H
+#define VECTOR_2D_H
 
 class Vector {
 
@@ -13,6 +20,18 @@ public:
 		m_X = x;
 		m_Y = y;
 	}
+    
+    Vector(Vector &vec)
+    {
+        m_X = vec.GetX();
+        m_Y = vec.GetY();
+    }
+    
+    Vector()
+    {
+        m_X = 0;
+        m_Y = 0;
+    }
 
 // Methods
 public:
@@ -31,8 +50,9 @@ public:
 
 	// Getters and Setters
 
-	float GetX();
-	float GetY();
+	float GetX() const;
+	float GetY() const;
+    
 	void SetX(float x);
 	void SetY(float y);
 
@@ -41,4 +61,4 @@ private:
 	float m_X, m_Y;
 };
 
-#endif // !VECTOR_2_H
+#endif // !VECTOR_2D_H

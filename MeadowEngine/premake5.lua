@@ -17,7 +17,8 @@ project "MeadowEngine"
 	}
 
 	filter { "configurations:Debug" }
-		buildoptions "/MTd"
+		filter "system:windows"
+			buildoptions "/MTd"
 		runtime "Debug"
 		symbols "on"
 		defines {
@@ -25,6 +26,7 @@ project "MeadowEngine"
 		}
 
 	filter { "configurations:Release"}
-		buildoptions "/MT"
+		filter "system:windows"
+			buildoptions "/MT"
 		runtime "Release"
 		optimize "on"

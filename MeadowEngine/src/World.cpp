@@ -2,8 +2,5 @@
 
 void World::step()
 {
-	for ()
-	{
-		
-	}
+    
 }

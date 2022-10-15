@@ -33,12 +33,12 @@ float Vector::Cross(Vector InVector)
 
 // Getters and Setters
 
-float Vector::GetX()
+float Vector::GetX() const
 {
 	return m_X;
 }
 
-float Vector::GetY()
+float Vector::GetY() const
 {
 	return m_Y;
 }
