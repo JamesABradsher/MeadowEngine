@@ -19,13 +19,7 @@ class World {
 public:
     World()
     {
-        tstObject = Object(100, 100);
-        const Vector* pos_ptr = &(tstObject.GetPosition());
-        std::cout << pos_ptr << std::endl;
-        Vector* tst = new Vector(8, 9);
-        tstObject.SetPosition(*tst);
-        pos_ptr = &(tstObject.GetPosition());
-        std::cout << pos_ptr << std::endl;
+        
     }
 
 // Methods
