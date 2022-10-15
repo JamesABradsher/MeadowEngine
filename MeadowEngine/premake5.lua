@@ -20,6 +20,9 @@ project "MeadowEngine"
 		buildoptions "/MTd"
 		runtime "Debug"
 		symbols "on"
+		defines {
+			"WORLD_DEBUG"
+		}
 
 	filter { "configurations:Release"}
 		buildoptions "/MT"
