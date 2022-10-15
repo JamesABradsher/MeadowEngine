@@ -17,13 +17,20 @@ public:
 // Methods
 public:
 	// Vector Operations
+
+	/*Adds values of InVector to this Vector*/
 	void Add(Vector InVector);
+	/*Subtracts values of InVector from this Vector*/
 	void Subtract(Vector InVector);
+	/*Multiplies values of this Vector by a scalar*/
 	void Scale(float scalar);
+	/*Returns a Vector equal to the Dot Product of this Vector and InVector*/
 	Vector Dot(Vector InVector);
+	/*Returns the result of this Vector cross InVector*/
 	float Cross(Vector InVector);
 
 	// Getters and Setters
+
 	float GetX();
 	float GetY();
 	void SetX(float x);
