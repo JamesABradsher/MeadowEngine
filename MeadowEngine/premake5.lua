@@ -13,7 +13,8 @@ project "MeadowEngine"
 	}
 
 	includedirs {
-		"include"
+		"include",
+		"%{prj.location}/vendor/**"
 	}
 
 	filter { "configurations:Debug" }

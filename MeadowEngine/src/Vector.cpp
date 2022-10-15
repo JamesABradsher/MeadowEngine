@@ -1,18 +1,18 @@
 #include "Vector.h"
 
-void Vector::Add(Vector InVector)
+void Vector::operator+ (Vector InVector)
 {
 	m_X += InVector.GetX();
 	m_Y += InVector.GetY();
 }
 
-void Vector::Subtract(Vector InVector)
+void Vector::operator- (Vector InVector)
 {
 	m_X -= InVector.GetX();
 	m_Y -= InVector.GetY();
 }
 
-void Vector::Scale(float scalar)
+void Vector::operator* (float scalar)
 {
 	m_X *= scalar;
 	m_Y *= scalar;

@@ -38,11 +38,11 @@ public:
 	// Vector Operations
 
 	/*Adds values of InVector to this Vector*/
-	void Add(Vector InVector);
+	void operator+ (Vector InVector);;
 	/*Subtracts values of InVector from this Vector*/
-	void Subtract(Vector InVector);
+	void operator- (Vector InVector);
 	/*Multiplies values of this Vector by a scalar*/
-	void Scale(float scalar);
+	void operator* (float scalar);
 	/*Returns a Vector equal to the Dot Product of this Vector and InVector*/
 	Vector Dot(Vector InVector);
 	/*Returns the result of this Vector cross InVector*/
