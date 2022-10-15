@@ -1,0 +1,3 @@
+[submodule "MeadowEngine/vendor/spdlog"]
+	path = MeadowEngine/vendor/spdlog
+	url = https://github.com/gabime/spdlog.git
