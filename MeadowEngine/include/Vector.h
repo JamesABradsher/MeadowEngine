@@ -21,7 +21,7 @@ public:
 		m_Y = y;
 	}
     
-    Vector(const Vector &vec)
+    Vector(const Vector& vec)
     {
         m_X = vec.GetX();
         m_Y = vec.GetY();

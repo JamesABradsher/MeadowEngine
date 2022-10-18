@@ -18,13 +18,14 @@ project "MeadowEngine"
 	}
 
 	filter { "configurations:Debug" }
+		defines {
+			"ENGINE_DEBUG"
+		}
 		filter "system:windows"
 			buildoptions "/MTd"
 		runtime "Debug"
 		symbols "on"
-		defines {
-			"WORLD_DEBUG"
-		}
+		
 
 	filter { "configurations:Release"}
 		filter "system:windows"

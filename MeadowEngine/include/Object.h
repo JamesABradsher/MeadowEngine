@@ -5,7 +5,10 @@
 //  Created by Jim Bradsher on 10/15/22.
 //
 
+#include <iostream>
 #include "Vector.h"
+#include "Collider.h"
+#include "Log.h"
 
 #ifndef Object_h
 #define Object_h
@@ -33,9 +36,18 @@ public:
     {
         init(Vector(), Vector(), Vector(), 1.0);
     }
+
+    // Copy Constructor
+    Object(const Object& object)
+    {
+        init(object.GetPosition(), object.GetVelocity(), object.GetAcceleration(), object.GetMass());
+        m_Collider = object.GetCollider();
+    }
     
 // Methods
 public: 
+
+    void AddCollider(std::shared_ptr<Collider> collider);
     
     // Getters and Setters
     
@@ -43,6 +55,7 @@ public:
     const Vector& GetPosition() const;
     const Vector& GetVelocity() const;
     const Vector& GetAcceleration() const;
+    const std::shared_ptr<Collider>& GetCollider() const;
     
     void SetMass(float mass);
     void SetPosition(Vector pos);
@@ -64,6 +77,7 @@ private:
 
 // Member Variables
 private:
+    std::shared_ptr<Collider> m_Collider;
     Vector m_Position, m_Acceleration, m_Velocity;
     float m_Mass;
     float m_Gravity = -9.81f;

@@ -14,7 +14,8 @@ project "MeadowRenderer"
 
 	includedirs {
 		"include",
-		"%{wks.location}/MeadowEngine/include"
+		"%{wks.location}/MeadowEngine/include",
+		"%{wks.location}/MeadowEngine/vendor/spdlog/include"
 	}
 
 	links {

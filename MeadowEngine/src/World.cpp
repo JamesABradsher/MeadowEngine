@@ -1,11 +1,11 @@
 #include "World.h"
 
-void World::AddObject(Object* object)
+void World::AddObject(std::shared_ptr<Object>& object)
 {
     m_DynamicObjects.push_back(object);
 }
 
-void World::RemoveObject(Object* object)
+void World::RemoveObject(std::shared_ptr<Object>& object)
 {
     if (!object)
         return;
@@ -18,7 +18,7 @@ void World::RemoveObject(Object* object)
 
 void World::step(float DeltaTime)
 {
-    for (Object* object : m_DynamicObjects)
+    for (std::shared_ptr<Object> object : m_DynamicObjects)
     {
         // Updates Position
         Vector newPos = object->GetPosition();
@@ -32,7 +32,7 @@ void World::step(float DeltaTime)
         newVel * DeltaTime;
         object->SetVelocity(newVel);
 
-        std::cout << "Position: " << object->GetPosition().GetX() << ", " << object->GetPosition().GetY() << std::endl;
-        std::cout << "Velocity: " << object->GetVelocity().GetX() << ", " << object->GetVelocity().GetY() << std::endl;
+        MDW_TRACE("Positions: {0}, {1}", object->GetPosition().GetX(), object->GetPosition().GetY());
+        MDW_TRACE("Velocity: ");
     }
 }

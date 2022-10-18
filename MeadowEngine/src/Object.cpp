@@ -7,6 +7,16 @@
 
 #include "Object.h"
 
+void Object::AddCollider(std::shared_ptr<Collider> collider)
+{
+    m_Collider = collider;
+}
+
+const std::shared_ptr<Collider>& Object::GetCollider() const
+{
+    return m_Collider;
+}
+
 float Object::GetMass() const
 {
     return m_Mass;

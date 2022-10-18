@@ -1,6 +1,7 @@
 #pragma once
 
 #include "World.h"
+#include "Log.h"
 
 #ifndef TESTING_H
 #define TESTING_H
