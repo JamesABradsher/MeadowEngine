@@ -1,42 +1,44 @@
 #pragma once
 
 #include "Collider.h"
-#include "BoxCollider.h"
+#include "SphereCollider.h"
 
-#ifndef SPHERE_COLLIDER_H
-#define SPHERE_COLLIDER_H
+#ifndef BOX_COLLIDER_H
+#define BOX_COLLIDER_H
 
-class BoxCollider;
+class SphereCollider;
 
-class SphereCollider :
-    public Collider
+class BoxCollider :
+	 public Collider
 {
 
-    // Constructor
 public:
-    SphereCollider(const Vector& pos, float radius)
-        : Collider(pos),  m_Radius(radius)
+    BoxCollider(const Vector& pos, float xBound, float yBound) 
+        : Collider(pos), m_XBound(xBound), m_YBound(yBound)
     {
     }
 
-    // Methods
+    // Mehtods
 public:
     /*Method for determining if this sphere collider is colliding with another generic collider*/
     virtual  bool GetIsColliding(std::shared_ptr<Collider> collider) const;
-   
+    
     /*Method for determining if this sphere collider is colliding with another sphere collider*/
     virtual bool GetIsColliding(std::shared_ptr<SphereCollider> sphereCollider) const;
     
     /*Method for determining if this sphere collider is colliding with an AABB box collider*/
-    virtual bool GetIsColliding(std::shared_ptr<BoxCollider> boxCollider) const { return false; }
+    virtual bool GetIsColliding(std::shared_ptr<BoxCollider> boxCollider) const;
 
     // Getters
 
-    float GetRadius() const;
+    float GetXMin() const;
+    float GetXMax() const;
+    float GetYMin() const;
+    float GetYMax() const;
 
-    // Member Variables
+    // Member Vairable
 private:
-    float m_Radius;
+    float m_XBound, m_YBound;
 };
 
-#endif
+#endif // !BOX_COLLIDER_H

@@ -7,7 +7,7 @@
 
 #include "Object.h"
 
-void Object::AddCollider(std::shared_ptr<Collider> collider)
+void Object::AddCollider(std::shared_ptr<Collider>& collider)
 {
     m_Collider = collider;
 }
@@ -79,7 +79,7 @@ void Object::SetGravity(bool gravity)
 {
     m_HasGravity = gravity;
     if (m_HasGravity)
-        m_Acceleration.SetY(m_Gravity);
+        m_Acceleration.SetY(s_Gravity);
     else
         m_Acceleration.SetY(0);
 }

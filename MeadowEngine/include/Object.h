@@ -13,6 +13,8 @@
 #ifndef Object_h
 #define Object_h
 
+static const float s_Gravity = -9.81f;
+
 class Object {
     
 // Constructor
@@ -46,8 +48,8 @@ public:
     
 // Methods
 public: 
-
-    void AddCollider(std::shared_ptr<Collider> collider);
+    /*Adds a Collider to an object*/
+    void AddCollider(std::shared_ptr<Collider>& collider);
     
     // Getters and Setters
     
@@ -80,7 +82,6 @@ private:
     std::shared_ptr<Collider> m_Collider;
     Vector m_Position, m_Acceleration, m_Velocity;
     float m_Mass;
-    float m_Gravity = -9.81f;
     bool m_HasGravity = false;
 };
 

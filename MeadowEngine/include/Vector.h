@@ -7,6 +7,8 @@
 
 #pragma once
 
+#include <iostream>
+
 
 #ifndef VECTOR_2D_H
 #define VECTOR_2D_H
@@ -35,18 +37,25 @@ public:
 
 // Methods
 public:
+	/*Gets the distance from this vector to another*/
+	float DistanceTo(const Vector& targetVector) const;
+
 	// Vector Operations
 
 	/*Adds values of InVector to this Vector*/
-	void operator+ (Vector InVector);;
+	void operator+= (const Vector& InVector);
+	
 	/*Subtracts values of InVector from this Vector*/
-	void operator- (Vector InVector);
+	void operator-= (const Vector& InVector);
+	
 	/*Multiplies values of this Vector by a scalar*/
-	void operator* (float scalar);
+	void operator*= (float scalar);
+	
 	/*Returns a Vector equal to the Dot Product of this Vector and InVector*/
-	Vector Dot(Vector InVector);
+	Vector Dot(const Vector& InVector);
+	
 	/*Returns the result of this Vector cross InVector*/
-	float Cross(Vector InVector);
+	float Cross(const Vector& InVector);
 
 	// Getters and Setters
 

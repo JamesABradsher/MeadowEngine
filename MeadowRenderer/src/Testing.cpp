@@ -6,13 +6,19 @@ void Testing::Run()
 {
 	Meadow::Log::init();
 
-	Object tst = Object(0, 1000);
-	std::shared_ptr<Collider> c = std::make_shared<Collider>(Collider(tst.GetPosition()));
-	tst.AddCollider(std::make_shared<Collider>(c));
+	Object tst = Object(0, 100);
+	std::shared_ptr<Collider> c = std::make_shared<SphereCollider>(SphereCollider(tst.GetPosition(), 5));
+	tst.AddCollider(c);
 	tst.SetGravity(true);
+
+	Object tst2 = Object(0, 90);
+	std::shared_ptr<Collider> c2 = std::make_shared<SphereCollider>(SphereCollider(tst2.GetPosition(), 2));
+	tst2.AddCollider(c2);
     World world;
 	std::shared_ptr<Object> tstobj = std::make_shared<Object>(tst);
+	std::shared_ptr<Object> tstobj2 = std::make_shared<Object>(tst2);
 	world.AddObject(tstobj);
+	world.AddObject(tstobj2);
 	for (int i = 0; i < 100; i++)
 	{
 		world.step(1);

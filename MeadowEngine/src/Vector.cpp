@@ -1,24 +1,29 @@
 #include "Vector.h"
 
-void Vector::operator+ (Vector InVector)
+float Vector::DistanceTo(const Vector& targetVector) const
+{
+	return std::sqrt(std::pow(targetVector.GetX() - m_X, 2) + std::pow(targetVector.GetY() - m_Y, 2));
+}
+
+void Vector::operator+= (const Vector& InVector)
 {
 	m_X += InVector.GetX();
 	m_Y += InVector.GetY();
 }
 
-void Vector::operator- (Vector InVector)
+void Vector::operator-= (const Vector& InVector)
 {
 	m_X -= InVector.GetX();
 	m_Y -= InVector.GetY();
 }
 
-void Vector::operator* (float scalar)
+void Vector::operator*= (float scalar)
 {
 	m_X *= scalar;
 	m_Y *= scalar;
 }
 
-Vector Vector::Dot(Vector InVector)
+Vector Vector::Dot(const Vector& InVector)
 {
 	float x, y;
 	x = m_X * InVector.GetX();
@@ -26,7 +31,7 @@ Vector Vector::Dot(Vector InVector)
 	return Vector(x, y);
 }
 
-float Vector::Cross(Vector InVector)
+float Vector::Cross(const Vector& InVector)
 {
 	return m_X * InVector.GetY() - m_Y * InVector.GetX();
 }

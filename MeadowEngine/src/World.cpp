@@ -22,17 +22,22 @@ void World::step(float DeltaTime)
     {
         // Updates Position
         Vector newPos = object->GetPosition();
-        newPos + object->GetVelocity();
-        newPos * DeltaTime;
+        newPos += object->GetVelocity();
+        newPos *= DeltaTime;
         object->SetPosition(newPos);
         
         // Updates Velocity
         Vector newVel = object->GetVelocity();
-        newVel + object->GetAcceleration();
-        newVel * DeltaTime;
+        newVel += object->GetAcceleration();
+        newVel *= DeltaTime;
         object->SetVelocity(newVel);
 
-        MDW_TRACE("Positions: {0}, {1}", object->GetPosition().GetX(), object->GetPosition().GetY());
-        MDW_TRACE("Velocity: ");
+        MDW_TRACE("Position: {0}, {1}", object->GetPosition().GetX(), object->GetPosition().GetY());
+
+        for (std::shared_ptr<Object> otherObject : m_DynamicObjects)
+        {
+            if (object != otherObject)
+                MDW_INFO("Is Colliding: {0}", object->GetCollider()->GetIsColliding(otherObject->GetCollider()));
+        }
     }
 }
