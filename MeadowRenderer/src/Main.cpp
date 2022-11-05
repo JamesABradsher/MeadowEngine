@@ -1,10 +1,10 @@
 
 #include <iostream>
 
-#include "Testing.h"
+#include "Application.h"
 
 int main()
 {
-	Testing app;
+	Application app;
 	app.Run();
 }

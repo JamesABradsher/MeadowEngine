@@ -1,11 +1,11 @@
 #include "World.h"
 
-void World::AddObject(std::shared_ptr<Object>& object)
+void World::AddObject(std::shared_ptr<Object> object)
 {
     m_DynamicObjects.push_back(object);
 }
 
-void World::RemoveObject(std::shared_ptr<Object>& object)
+void World::RemoveObject(std::shared_ptr<Object> object)
 {
     if (!object)
         return;

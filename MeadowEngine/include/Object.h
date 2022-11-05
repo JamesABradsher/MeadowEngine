@@ -15,7 +15,10 @@
 
 static const float s_Gravity = -9.81f;
 
-class Object {
+class Collider;
+
+class Object 
+    : public std::enable_shared_from_this<Object> {
     
 // Constructor
 public:
@@ -49,7 +52,7 @@ public:
 // Methods
 public: 
     /*Adds a Collider to an object*/
-    void AddCollider(std::shared_ptr<Collider>& collider);
+    void AddCollider(std::shared_ptr<Collider> collider);
     
     // Getters and Setters
     
@@ -57,7 +60,7 @@ public:
     const Vector& GetPosition() const;
     const Vector& GetVelocity() const;
     const Vector& GetAcceleration() const;
-    const std::shared_ptr<Collider>& GetCollider() const;
+    std::shared_ptr<Collider> GetCollider() const;
     
     void SetMass(float mass);
     void SetPosition(Vector pos);

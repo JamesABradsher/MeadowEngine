@@ -21,9 +21,9 @@ public:
 // Methods
 public:
 	/*Adds an Object to te World*/
-	void AddObject(std::shared_ptr<Object>& object);
+	void AddObject(std::shared_ptr<Object> object);
 	/*Removes an Object from the World*/
-	void RemoveObject(std::shared_ptr<Object>& object);
+	void RemoveObject(std::shared_ptr<Object> object);
 	/*Steps through each dynamic object and simulates kinematics*/
 	void step(float DeltaTime);
 

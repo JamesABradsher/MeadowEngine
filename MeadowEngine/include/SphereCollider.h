@@ -9,13 +9,13 @@
 class BoxCollider;
 
 class SphereCollider :
-    public Collider
+    public Collider, public std::enable_shared_from_this<SphereCollider>
 {
 
     // Constructor
 public:
-    SphereCollider(const Vector& pos, float radius)
-        : Collider(pos),  m_Radius(radius)
+    SphereCollider(float radius)
+        : m_Radius(radius)
     {
     }
 
@@ -25,7 +25,7 @@ public:
     virtual  bool GetIsColliding(std::shared_ptr<Collider> collider) const;
    
     /*Method for determining if this sphere collider is colliding with another sphere collider*/
-    virtual bool GetIsColliding(std::shared_ptr<SphereCollider> sphereCollider) const;
+    virtual bool GetIsColliding(std::shared_ptr<const SphereCollider> sphereCollider) const;
     
     /*Method for determining if this sphere collider is colliding with an AABB box collider*/
     virtual bool GetIsColliding(std::shared_ptr<BoxCollider> boxCollider) const { return false; }

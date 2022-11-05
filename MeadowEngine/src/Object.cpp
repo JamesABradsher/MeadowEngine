@@ -7,12 +7,13 @@
 
 #include "Object.h"
 
-void Object::AddCollider(std::shared_ptr<Collider>& collider)
+void Object::AddCollider(std::shared_ptr<Collider> collider)
 {
     m_Collider = collider;
+    collider->SetOwner(shared_from_this());
 }
 
-const std::shared_ptr<Collider>& Object::GetCollider() const
+std::shared_ptr<Collider> Object::GetCollider() const
 {
     return m_Collider;
 }

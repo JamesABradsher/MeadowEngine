@@ -13,8 +13,8 @@ class BoxCollider :
 {
 
 public:
-    BoxCollider(const Vector& pos, float xBound, float yBound) 
-        : Collider(pos), m_XBound(xBound), m_YBound(yBound)
+    BoxCollider(Vector& pos, float xBound, float yBound) 
+        : m_XBound(xBound), m_YBound(yBound)
     {
     }
 
