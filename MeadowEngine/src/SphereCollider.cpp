@@ -5,6 +5,11 @@ float SphereCollider::GetRadius() const
 	return m_Radius;
 }
 
+void SphereCollider::SetRadius(float radius)
+{
+	m_Radius = radius;
+}
+
 bool SphereCollider::GetIsColliding(std::shared_ptr<Collider> collider) const
 {
 	return collider->GetIsColliding(shared_from_this());

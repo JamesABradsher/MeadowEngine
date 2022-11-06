@@ -18,14 +18,19 @@ std::shared_ptr<Collider> Object::GetCollider() const
     return m_Collider;
 }
 
-float Object::GetMass() const
-{
-    return m_Mass;
-}
-
 const Vector& Object::GetPosition() const
 {
     return m_Position;
+}
+
+void Object::SetPosition(Vector pos)
+{
+    m_Position = pos;
+}
+
+float Object::GetMass() const
+{
+    return m_Mass;
 }
 
 const Vector& Object::GetVelocity() const
@@ -41,11 +46,6 @@ const Vector& Object::GetAcceleration() const
 void Object::SetMass(float mass)
 {
     m_Mass = mass;
-}
-
-void Object::SetPosition(Vector pos)
-{
-    m_Position = pos;
 }
 
 void Object::SetPosition(float x, float y)

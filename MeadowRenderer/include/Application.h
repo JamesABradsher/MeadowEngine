@@ -1,34 +1,28 @@
 #pragma once
 
 #include "World.h"
+#include "SphereCollider.h"
 
 #ifndef APPLICATION_H
 #define APPLICATION_H
 
-enum ColliderType 
-{
-	SPHERE,
-	BOX
-};
-
 
 class Application
 {
+public:
+	Application()
+	{
+		Meadow::Log::init();
+	}
 
 	// Methods
 public:
 	void Run();
 
-	// Private Methods
 private:
-	std::shared_ptr<Object> MakeObject(std::shared_ptr<Collider>, float x, float y, bool dynamic = false, bool gravity = false);
+	std::shared_ptr<Object> MakeObject(std::shared_ptr<Collider> collider, float x, float y, bool gravity = false);
 
-	std::shared_ptr<Collider> MakeColldier(ColliderType type, float...);
-
-	// Members
-private:
-	std::vector<Object> m_ObjectArena;
-	std::vector<Collider> m_ColliderArena;
+	std::shared_ptr<Collider> MakeColldier(float radius);
 };
 
 #endif // !APPLICATION_H

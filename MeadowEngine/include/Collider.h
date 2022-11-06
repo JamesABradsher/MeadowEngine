@@ -24,6 +24,7 @@ public:
 
 	Collider(std::shared_ptr<Collider> collider)
 	{
+		m_Owner = collider->GetOwner();
 	}
 
 // Methods

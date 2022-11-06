@@ -16,8 +16,7 @@ class SphereCollider :
 public:
     SphereCollider(float radius)
         : m_Radius(radius)
-    {
-    }
+    {}
 
     // Methods
 public:
@@ -30,9 +29,11 @@ public:
     /*Method for determining if this sphere collider is colliding with an AABB box collider*/
     virtual bool GetIsColliding(std::shared_ptr<BoxCollider> boxCollider) const { return false; }
 
-    // Getters
+    // Getters and Setters
 
     float GetRadius() const;
+
+    void SetRadius(float radius);
 
     // Member Variables
 private:

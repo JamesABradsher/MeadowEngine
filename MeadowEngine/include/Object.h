@@ -22,24 +22,9 @@ class Object
     
 // Constructor
 public:
-    Object(Vector pos, Vector vel, Vector acc, float mass)
-    {
-        init(pos, vel, acc, mass);
-    }
-    
-    Object(Vector &pos)
-    {
-        init(pos, Vector(), Vector(), 1.0);
-    }
-    
-    Object(float x, float y)
-    {
-        init(Vector(x, y), Vector(), Vector(), 1.0);
-    }
-    
+  
     Object()
     {
-        init(Vector(), Vector(), Vector(), 1.0);
     }
 
     // Copy Constructor
@@ -54,6 +39,14 @@ public:
     /*Adds a Collider to an object*/
     void AddCollider(std::shared_ptr<Collider> collider);
     
+    void init(Vector pos, Vector vel, Vector acc, float mass)
+    {
+        m_Position = pos;
+        m_Acceleration = acc;
+        m_Velocity = vel;
+        m_Mass = mass;
+    }
+
     // Getters and Setters
     
     float GetMass() const;
@@ -70,15 +63,6 @@ public:
     void SetAcceleration(Vector acc);
     void SetAcceleration(float xacc, float yacc);
     void SetGravity(bool gravity);
-    
-private:
-    void init(Vector pos, Vector vel, Vector acc, float mass)
-    {
-        m_Position = pos;
-        m_Acceleration = acc;
-        m_Velocity = vel;
-        m_Mass = mass;
-    }
 
 // Member Variables
 private:
