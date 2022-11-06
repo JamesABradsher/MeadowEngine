@@ -21,8 +21,6 @@ public:
 
 private:
 	std::shared_ptr<Object> MakeObject(std::shared_ptr<Collider> collider, float x, float y, bool gravity = false);
-
-	std::shared_ptr<Collider> MakeColldier(float radius);
 };
 
 #endif // !APPLICATION_H
