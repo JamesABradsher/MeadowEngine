@@ -8,6 +8,7 @@
 #pragma once
 
 #include <iostream>
+#include <cmath>
 
 
 #ifndef VECTOR_2D_H

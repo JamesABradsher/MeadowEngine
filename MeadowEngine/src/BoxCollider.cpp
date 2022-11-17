@@ -1,6 +1,7 @@
 #include "BoxCollider.h"
 
 
+
 float BoxCollider::GetXMin() const
 {
 	return GetPosition().GetX() - m_XBound;

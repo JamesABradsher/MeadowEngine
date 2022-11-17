@@ -12,11 +12,13 @@ std::shared_ptr<Object> Application::MakeObject(std::shared_ptr<Collider> colldi
 void Application::Run()
 {
 	std::shared_ptr<Object> ptr = MakeObject(std::make_shared<SphereCollider>(10), 10, 100, true);
+    std::shared_ptr<Object> ptr2 = MakeObject(std::make_shared<SphereCollider>(5), 10, 85, false);
 
 	World world;
 	world.AddObject(ptr);
+    world.AddObject(ptr2);
 	for (int i = 0; i < 10; i++)
 	{
-		world.step(1);
+		world.step(0.5);
 	}
 }
